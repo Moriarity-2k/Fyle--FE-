@@ -1,0 +1,53 @@
+<div class="workout-list">
+    <div class="flex gap-8 mb-6 max-sm:flex-col max-sm:mx-8">
+        <input
+            pInputText
+            placeholder="Search by name"
+            (input)="applyFilter($event)"
+            class="px-4 py-2 focus:ring-0 border border-zinc-300"
+        />
+        <p-dropdown
+            [options]="workoutTypes"
+            (onChange)="applyFilterByType($event.value)"
+            placeholder="Filter by Workout Type"
+        >
+            <ng-template let-item pTemplate="selectedItem">
+                <span>{{ item }}</span>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+                <span>{{ item }}</span>
+            </ng-template>
+        </p-dropdown>
+    </div>
+    <p-table
+        sortField="Name"
+        [sortOrder]="-1"
+        [value]="filteredWorkouts"
+        [paginator]="true"
+        [rows]="pageSize"
+        [totalRecords]="totalRecords"
+        (onPageChange)="paginate($event)"
+        [rowsPerPageOptions]="[2, 5, 10, 20, 30]"
+    >
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="name">
+                    Name
+                </th>
+                <th pSortableColumn="workouts">Workouts</th>
+                <th pSortableColumn="numberOfWorkouts">Number of Workouts</th>
+                <th pSortableColumn="totalWorkoutMinutes">
+                    Total Workout Minutes
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData>
+            <tr>
+                <td>{{ rowData.name }}</td>
+                <td>{{ giveWorkouts(rowData.workouts) }}</td>
+                <td>{{ giveNumberOfWorkouts(rowData.workouts) }}</td>
+                <td>{{ giveMinutes(rowData.workouts) }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>  

@@ -1,0 +1,43 @@
+:host ::ng-deep .p-multiselect-panel {
+    width: 200px !important;
+}
+
+:host ::ng-deep .p-multiselect-item {
+    width: 200px;
+    background-color: #f0f2f5; /* Light background color for visibility */
+    padding: 8px; /* Add padding for better spacing */
+    border-radius: 4px; /* Optional: Rounded corners */
+}
+
+:host ::ng-deep .p-multiselect-item:hover {
+    background-color: #e3eaf0; /* Hover effect for better UX */
+}
+
+:host ::ng-deep .p-multiselect {
+    width: 200px;
+}
+
+:host ::ng-deep .w-52 {
+    width: 200px; /* Ensure consistent width */
+}
+
+:host ::ng-deep input[type="number"] {
+    background-color: #f0f4f8; /* Light background color for visibility */
+    padding: 8px; /* Add padding for better spacing */
+    border-radius: 4px; /* Rounded corners */
+    margin: 4px 0; /* Space between input and label */
+}
+
+:host ::ng-deep input[type="number"]:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px #e0e5ee; /* Custom focus ring */
+}
+
+:host ::ng-deep .p-button {
+    background-color: #1e40af !important; /* Blue background */
+    border: none !important;
+    color: white !important; /* White text */
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+}

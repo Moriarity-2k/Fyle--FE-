@@ -1,0 +1,73 @@
+<div class="add-workout-form mx-auto max-sm:my-2">
+    <!-- Title Section -->
+    <div class="josefin-sans uppercase tracking-wider font-bold text-[#062dac] text-3xl border-b border-blue-600 pb-2">
+        Track Your Workouts
+    </div>
+    <!-- Form Section -->
+    <form
+        #workoutForm="ngForm"
+        (ngSubmit)="addWorkout(workoutForm)"
+        class="p-16 max-md:p-8 border border-slate-200 shadow-lg"
+    >
+        <div class="w-full flex flex-col gap-8">
+            <!-- User Name and Workout Type Input Section -->
+            <div class="flex items-center gap-16 max-md:gap-8 max-sm:flex-col max-sm:items-start">
+                <!-- User Name Input -->
+                <p-floatLabel class="w-72 max-md:w-40">
+                    <input
+                        pInputText
+                        id="username"
+                        name="username"
+                        [(ngModel)]="userName"
+                        variant="filled"
+                        required
+                        class="px-4 py-3 focus:ring-0 focus:border focus:border-slate-300 focus:px-3 focus:py-1.5 rounded-md w-72 max-md:w-40"
+                    />
+                    <label for="username">Username</label>
+                </p-floatLabel>
+
+                <!-- Workout Type Dropdown -->
+                <p-floatLabel class="w-72 max-md:w-40 focus:ring-0">
+                    <p-dropdown
+                        [options]="workoutTypes"
+                        name="workoutType"
+                        [(ngModel)]="workoutType"
+                        [filter]="false"
+                        required
+                        variant="filled"
+                        class="focus:ring-0 w-72 max-md:w-40 rounded-md selection:bg-slate-200"
+                    >
+                        <ng-template let-workout pTemplate="item" class="focus:bg-slate-50">
+                            <div class="focus:ring-0 w-72 max-md:w-40 rounded-md selection:bg-slate-300">
+                                {{ workout }}
+                            </div>
+                        </ng-template>
+                    </p-dropdown>
+                    <label for="float-label" class="w-72 max-md:w-40">Select workout</label>
+                </p-floatLabel>
+            </div>
+
+            <!-- Workout Minutes Input Section -->
+            <p-floatLabel class="w-72 max-md:w-40">
+                <input
+                    type="number"
+                    name="workoutMinutes"
+                    [(ngModel)]="workoutMinutes"
+                    placeholder="Enter workout minutes"
+                    required
+                    min="1"
+                    class="focus:ring-0 border border-slate-300 w-72 max-md:w-40 rounded-md bg-gray-100 p-2"
+                />
+            </p-floatLabel>
+
+            <!-- Submit Button -->
+            <p-button
+                class="w-max tracking-wider font-mono font-light"
+                label="Submit"
+                icon="pi pi-check"
+                iconPos="right"
+                type="Submit"
+            />
+        </div>
+    </form>
+</div>

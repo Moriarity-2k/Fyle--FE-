@@ -1,27 +1,120 @@
-# Fyle
+# Workout Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+## Overview
 
-## Development server
+This is an Angular application that allows users to track their workouts. Users can add various types of workouts, view their workout statistics, and filter through workout data. The application is built using Angular 18+, and leverages Angular's standalone components feature.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Table of Contents
 
-## Code scaffolding
+- [Overview](#overview)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Setup and Installation](#setup-and-installation)
+- [Running the Application](#running-the-application)
+- [Running Tests](#running-tests)
+- [Code Coverage](#code-coverage)
+- [Dependencies](#dependencies)
+- [License](#license)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Add workouts (Running, Cycling, Swimming, Yoga)
+- View workouts for multiple users
+- Filter and search through user workouts
+- Display workout statistics in a chart
+- Pagination support for user lists
+- Unit tests with 100% code coverage for one component and one service
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Project Structure
 
-## Running unit tests
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+src/
+├── app/
+│ ├── add-workout/
+│ │ ├── add-workout.component.css
+│ │ ├── add-workout.component.html
+│ │ ├── add-workout.component.ts
+│ │ ├── add-workout.component.spec.ts
+│ ├── workout-chart/
+│ │ ├── workout-chart.component.css
+│ │ ├── workout-chart.component.html
+│ │ ├── workout-chart.component.ts
+│ ├── workout-list/
+│ │ ├── workout-list.component.css
+│ │ ├── workout-list.component.html
+│ │ ├── workout-list.component.ts
+│ ├── app.component.css
+│ ├── app.component.html
+│ ├── app.component.spec.ts
+│ ├── app.component.ts
+│ ├── app.config.ts
+│ ├── app.config.server.ts
+│ ├── app.routes.ts
+│ ├── workout.service.spec.ts
+│ ├── workout.service.ts
+├── assets/
+├── environments/
+├── styles.css
+├── main.ts
+├── index.html
 
-## Running end-to-end tests
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Setup and Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/your-repo/workout-app.git
+    cd workout-app
+    ```
+
+2. **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3. **Set up local storage**
+    Ensure your browser's local storage is available and working correctly for storing user data.
+
+## Running the Application
+
+1. **Start the development server**
+    ```bash
+    ng serve
+    ```
+    Navigate to `http://localhost:4200/` in your web browser to view the application.
+
+## Running Tests
+
+1. **Run unit tests**
+    ```bash
+    ng test
+    ```
+
+2. **Generate code coverage report**
+    ```bash
+    ng test --code-coverage
+    ```
+    Open the `coverage/index.html` file in your browser to view the detailed report.
+
+<!-- ## Code Coverage
+
+![Coverage Badge](https://img.shields.io/badge/Coverage-100%25-brightgreen)
+
+### Summary
+
+- **WorkoutService**: 100%
+- **AddWorkoutComponent**: 100%
+
+To generate the coverage report, run `ng test --code-coverage` and open the `coverage/index.html` file in your browser to view the detailed report. -->
+
+## Dependencies
+
+- Angular 18+
+- Angular Material
+- PrimeNG
+- RxJS
+- Karma
+- Jasmine

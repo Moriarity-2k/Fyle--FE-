@@ -1,0 +1,31 @@
+<!-- Component Template: workout-chart.component.html -->
+<div class="flex items-start sm:gap-8 max-sm:flex-col">
+    <div class="user-list sm:w-full w-full">
+        <ul class="md:divide-y w-full sm:mx-4 bg-slate-100">
+            <!-- Loop through the filtered users and display their names -->
+            <li
+                *ngFor="let user of filteredUsers"
+                (click)="selectUser(user, user.id)"
+                [ngClass]="{
+                    'bg-blue-800 rounded-md text-white': selectedUser?.name === user.name
+                }"
+                class="max-sm:border-b max-sm:border-gray-200 max-md:text-sm"
+            >
+                {{ user.name }}
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="selectedUser" class="h-auto w-full mt-4">
+        <!-- Display selected user's workout progress in a chart -->
+        <h2>{{ selectedUser.name }}'s Workout Progress</h2>
+        <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+    </div>
+</div>
+
+<!-- Paginator for navigating through user list -->
+<p-paginator
+    [rows]="pageSize"
+    [totalRecords]="totalRecords"
+    (onPageChange)="paginate($event)"
+></p-paginator>
