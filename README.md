@@ -107,8 +107,7 @@ src/
 
 - **WorkoutService**: 100%
 - **AddWorkoutComponent**: 100%
-
-To generate the coverage report, run `ng test --code-coverage` and open the `coverage/index.html` file in your browser to view the detailed report. -->
+-->
 
 ## Dependencies
 
@@ -118,3 +117,13 @@ To generate the coverage report, run `ng test --code-coverage` and open the `cov
 - RxJS
 - Karma
 - Jasmine
+
+## Code Coverage
+
+![image](https://github.com/user-attachments/assets/ae0c90da-3472-4d0b-bb36-f3259568fd48)
+
+=============================== Coverage summary ===============================
+Statements   : 99.18% ( 122/123 )
+Branches     : 86.2% ( 25/29 )
+Functions    : 100% ( 42/42 )
+Lines        : 99.14% ( 116/117 )
