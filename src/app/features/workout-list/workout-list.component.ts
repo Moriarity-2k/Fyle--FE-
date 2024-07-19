@@ -31,7 +31,7 @@ export class WorkoutListComponent implements OnInit, OnDestroy {
 
     workouts: { id: number; name: string; workouts: any[] }[] = []; // List of users with their workouts
     filteredWorkouts: any[] = []; // Filtered list of users for pagination
-    pageSize: number = 100; // Number of users per page
+    pageSize: number = 5; // Number of users per page
     pageIndex: number = 0; // Current page index
     totalRecords: number = 0; // Total number of users
     private workoutsSub!: Subscription;

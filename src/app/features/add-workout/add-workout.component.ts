@@ -34,9 +34,9 @@ import { WorkoutService } from '../../services/workout.service';
     styleUrls: ['./add-workout.component.css'],
 })
 export class AddWorkoutComponent {
-    userName: string = '123';
+    userName: string = '';
     workoutType: string = '';
-    workoutMinutes: number | null = 123;
+    workoutMinutes: number | null = null;
     workoutTypes: string[] = ['Running', 'Cycling', 'Swimming', 'Yoga'];
 
     // Initialising the workoutService and snackBar(for notifications)
